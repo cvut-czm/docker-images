@@ -28,6 +28,7 @@ RUN . /etc/default/locale
 
 # set czech timezone
 ENV TZ "Europe/Prague"
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # activate ssh-agent
 RUN eval `ssh-agent -s`
