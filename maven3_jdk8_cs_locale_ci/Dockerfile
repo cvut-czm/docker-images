@@ -1,6 +1,6 @@
 FROM maven:3-jdk-8
 
-# install locales and dos2unix
+# install locales, dos2unix
 RUN apt-get clean
 RUN apt-get update
 RUN apt-get install -y locales
@@ -25,6 +25,9 @@ RUN update-locale LANGUAGE=cs_CZ.utf8
 
 # activate locale
 RUN . /etc/default/locale
+
+# set czech timezone
+ENV TZ "Europe/Prague"
 
 # activate ssh-agent
 RUN eval `ssh-agent -s`
