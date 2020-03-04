@@ -1,4 +1,4 @@
-FROM gradle:6.2.1-jdk8
+FROM gradle:6.2.1-jdk8 
 
 # install locales, dos2unix
 RUN apt-get clean
